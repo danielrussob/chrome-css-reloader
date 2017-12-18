@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "CSS Reloader",
+  "version": "0.1.0",
+  "description": "CSS Reloader",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions": [
+    "http://*/*", "https://*/*",
+    "contextMenus", "tabs", "activeTab", "clipboardWrite"
+  ],
+
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
